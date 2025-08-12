@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import imgSignUp from '../../assets/images/imgSignUp.png';
 import { TextField, Box, Typography, Button, FormHelperText } from '@mui/material';
-import {btnStyles} from '../../styles/appStyles.jsx';
+import { btnStyles } from '../../styles/appStyles.jsx';
+import { helperTextRed } from '../../styles/appStyles.jsx';
+import { inputStyles } from '../../styles/appStyles.jsx';
+
+
 
 const validateEmail = (email) => {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -39,40 +43,21 @@ export default function OurNewsletter() {
           Cofee Lane promotions, new products and sales. Directly to your inbox.
         </Typography>
 
-        <Box sx={{ display: "flex", }}>
-          <TextField fullWidth variant="outlined" placeholder="Email" value={value} onChange={onChange} error={!!error}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                borderRadius: '16px',
-                backgroundColor: '#fff',
-                fontFamily: 'Work Sans',
-                height: '52px',
-                width: '743px',
-                color: '#000',
+        <Box sx={{ display: "flex", flexDirection: "column",  width: '743px', mr: 2, '&:hover .helper-text': { color: '#A63A3A' }, '&:focus-within .helper-text': { color: '#A63A3A' },}}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <TextField fullWidth variant="outlined" placeholder="Email" value={value} onChange={onChange} error={!!error} sx={inputStyles}/>
+            <Button variant="contained" onClick={handleSubmit} sx={{ ...btnStyles, width: '149px', px: 3, ml: 2 }}>
+              SIGN UP
+            </Button>
+          </Box>
 
-                '& .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#3E3027',
-                  borderWidth: '1px',
-                },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#3E3027',
-                  borderWidth: '1px',
-                },
-                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#3E3027',
-                  borderWidth: '1px',
-                },
-              },
-            }} />
-          <Button variant="contained" onClick={handleSubmit} sx={{ ...btnStyles, width: '149px', px: 3, }}>
-            SIGN UP
-          </Button>
+          {error && (
+            <FormHelperText className="helper-text" sx={{ ...helperTextRed, mt: 2 }}>
+              {error}
+            </FormHelperText>
+          )}
         </Box>
-        {error && (
-          <FormHelperText sx={{ color: 'red', fontSize: '14px', fontWeight: 500, mt: 2 }}>
-            {error}
-          </FormHelperText>
-        )}
+
       </Box>
     </Box>
   );
