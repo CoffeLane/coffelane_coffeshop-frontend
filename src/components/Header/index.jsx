@@ -1,17 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from '../../assets/images/Logo.svg';
-import { Box, Grid, Menu, MenuItem, Typography } from '@mui/material';
+import {Box, Button, Grid, Menu, MenuItem, Typography} from '@mui/material';
 import Account from '../../assets/icons/Account.svg';
 import ShoppingCart from '../../assets/icons/Shopping Cart.svg';
 import Search from '../Search/index.jsx';
 import TopLine from '../TopLine/index.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import Navbar from '../Navbar/index.jsx';
+import LoginModal from "../LoginModal/index.jsx";
 
 
 
 function Header() {
   const location = useLocation();
+
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const handleOpenLoginModal = () => {
+    setIsLoginModalOpen(true);
+  }
+  const handleCloseLoginModal = () => {
+    setIsLoginModalOpen(false);
+
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -23,15 +33,19 @@ function Header() {
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Search />
-          <Link to="/account">
+          <Button onClick={handleOpenLoginModal}>
             <Box component="img" src={Account} alt="User account" sx={{ marginLeft: '32px', width: '24px', height: '24px', cursor: 'pointer', }} />
-          </Link>
+          </Button>
           <Link to="/cart">
             <Box component="img" src={ShoppingCart} alt="Shopping cart" sx={{ marginLeft: '32px', width: '24px', height: '24px', cursor: 'pointer', }} />
           </Link>
         </Box>
       </Grid>
       <Navbar />
+      <LoginModal
+          open={isLoginModalOpen}
+          onClose={handleCloseLoginModal}
+      />
     </Box>
 
   );
