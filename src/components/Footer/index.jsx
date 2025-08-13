@@ -7,7 +7,7 @@ import { Link, } from 'react-router-dom';
 import linkedin from '../../assets/icons/linkedin.svg';
 import facebook from '../../assets/icons/facebook.svg';
 import youTube from '../../assets/icons/youTube.svg';
-import linstagram from '../../assets/icons/linstagram.svg';
+import instagram from '../../assets/icons/instagram.svg';
 import twitter from '../../assets/icons/twitter.svg';
 import vimeo from '../../assets/icons/vimeo.svg';
 import visa from '../../assets/icons/visa.svg';
@@ -88,7 +88,7 @@ export default function Footer() {
                 <Box sx={{ display: 'flex', gap: 1, mb: 4 }}>
                     <Box component='img' src={facebook} alt='facebook' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
                     <Box component='img' src={youTube} alt='youTube' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
-                    <Box component='img' src={linstagram} alt='linstagram' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
+                    <Box component='img' src={instagram} alt='linstagram' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
                     <Box component='img' src={twitter} alt='twitter' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
                     <Box component='img' src={vimeo} alt='vimeo' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
                     <Box component='img' src={linkedin} alt='linkedin' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
