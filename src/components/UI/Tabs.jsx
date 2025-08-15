@@ -8,7 +8,10 @@ export const StyledTabs = styled(Tabs) `
         justify-content: space-around;
     }
     .MuiTabs-indicator{
-        background-color: #8B4513;
+        background-color: #3E3027;
+    }
+    .Mui-selected {
+        color: #3E3027;
     }
 `
 

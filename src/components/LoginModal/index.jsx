@@ -285,9 +285,10 @@ const LoginModal = ({open, onClose}) => {
                         <Divider sx={{
                             my: 2,
                             width: '100%',
-                            alignSelf: 'stretch'
+                            alignSelf: 'stretch',
+                            color: '#000'
                         }}>
-                            <Typography variant="body2" sx={{color: '#666'}}>OR</Typography>
+                            <Typography variant="body2" sx={{color: '#666', padding: '0 16px'}}>OR</Typography>
                         </Divider>
 
                         <GoogleButton

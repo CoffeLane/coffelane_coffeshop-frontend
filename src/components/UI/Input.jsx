@@ -6,8 +6,11 @@ export const StyledTextField = styled(TextField)`
     width: 100%;
     font-size: 16px;
 
+ 
+
     .MuiOutlinedInput-root {
         border-radius: 8px;
+
         fieldset {
             border-color: #000;
         }
@@ -18,7 +21,7 @@ export const StyledTextField = styled(TextField)`
         }
 
         &.Mui-focused fieldset {
-            border-color: #8B4513;
+            border-color: #A4795B;
         }
 
         &.Mui-error input {
@@ -43,11 +46,12 @@ export const StyledTextField = styled(TextField)`
         height: 100%;
         padding: 0;
     }
-    
+
+    //Eye icon color
     .MuiInputAdornment-root {
         svg {
             path {
-                fill: #3E3027;
+                fill: #666;
             }
         }
     }
@@ -69,7 +73,7 @@ export const StyledTextField = styled(TextField)`
         -webkit-appearance: none;
 
         &::placeholder {
-            color: #b0b0b0;
+            color: #999;
             opacity: 1;
         }
     }
@@ -79,31 +83,29 @@ export const StyledTextField = styled(TextField)`
             opacity: 0.6;
         }
     }
-    
-    .MuiInputLabel-root.Mui-error {
-color : #FF2F2F;
+
+    .MuiInputLabel-root {
+        color: #000;
     }
-        //Input label position
+
+    .MuiInputLabel-root.Mui-error {
+        color: #FF2F2F;
+    }
+
+    //Input label position
 
     label {
         top: -5px;
         font-size: 16px;
+        color: #999;
 
         &[data-shrink='true'] {
             top: 1px;
         }
     }
 
-    .MuiInputLabel-outlined {
-        //color: #3E3027;
-    }
-
-    .MuiInputLabel-shrink {
-        //color: #3E3027;
-    }
-
     label.Mui-focused {
-        color: #3E3027;
+        color: #000;
     }
 
     //label white background
