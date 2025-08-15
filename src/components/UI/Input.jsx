@@ -2,31 +2,41 @@ import {styled} from "@mui/material/styles";
 import {TextField} from "@mui/material";
 
 
-export const StyledTextField = styled(TextField) `
+export const StyledTextField = styled(TextField)`
     width: 100%;
-    height: 44px;
     font-size: 16px;
+
+ 
 
     .MuiOutlinedInput-root {
         border-radius: 8px;
 
         fieldset {
-            border-color: #E0E0E0;
+            border-color: #000;
         }
 
         &:hover fieldset {
-            border-color: #BDBDBD;
+            border-color: #000;
+            color: green;
         }
 
         &.Mui-focused fieldset {
-            border-color: #8B4513;
+            border-color: #A4795B;
+        }
+
+        &.Mui-error input {
+            border-color: #FF2F2F;
+            color: #FF2F2F;
+        }
+
+        &.Mui-error label {
+            color: #FF2F2F;
         }
 
         &.Mui-error fieldset {
-            border-color: #D32F2F;
+            color: #FF2F2F;
         }
     }
-
 
     .MuiInputBase-adornedStart {
         padding: 0;
@@ -36,19 +46,24 @@ export const StyledTextField = styled(TextField) `
         height: 100%;
         padding: 0;
     }
-    
 
+    //Eye icon color
     .MuiInputAdornment-root {
         svg {
             path {
-                fill: #3E3027;
+                fill: #666;
             }
         }
     }
 
     .MuiFormHelperText-root {
         margin: 3px 0 0;
+
+        &.Mui-error {
+            color: #FF2F2F;
+        }
     }
+
 
     input {
         height: 44px;
@@ -58,7 +73,7 @@ export const StyledTextField = styled(TextField) `
         -webkit-appearance: none;
 
         &::placeholder {
-            color: #b0b0b0;
+            color: #999;
             opacity: 1;
         }
     }
@@ -68,36 +83,37 @@ export const StyledTextField = styled(TextField) `
             opacity: 0.6;
         }
     }
-//Input label position
+
+    .MuiInputLabel-root {
+        color: #000;
+    }
+
+    .MuiInputLabel-root.Mui-error {
+        color: #FF2F2F;
+    }
+
+    //Input label position
+
     label {
         top: -5px;
         font-size: 16px;
+        color: #999;
 
         &[data-shrink='true'] {
             top: 1px;
         }
     }
 
-    .MuiInputLabel-outlined {
-        color: #3E3027;
-    }
-
-    .MuiInputLabel-shrink {
-        color: #3E3027 !important;
-    }
-
     label.Mui-focused {
-        color: #3E3027 !important;
+        color: #000;
     }
-//label white background
+
+    //label white background
+
     .MuiOutlinedInput-notchedOutline {
         legend {
             font-size: 0.75em;
         }
-    }
-
-    .MuiFormHelperText-root.Mui-error {
-        margin: -2px auto 0;
     }
 
     .MuiAutocomplete-endAdornment {
