@@ -2,31 +2,38 @@ import {styled} from "@mui/material/styles";
 import {TextField} from "@mui/material";
 
 
-export const StyledTextField = styled(TextField) `
+export const StyledTextField = styled(TextField)`
     width: 100%;
-    height: 44px;
     font-size: 16px;
 
     .MuiOutlinedInput-root {
         border-radius: 8px;
-
         fieldset {
-            border-color: #E0E0E0;
+            border-color: #000;
         }
 
         &:hover fieldset {
-            border-color: #BDBDBD;
+            border-color: #000;
+            color: green;
         }
 
         &.Mui-focused fieldset {
             border-color: #8B4513;
         }
 
+        &.Mui-error input {
+            border-color: #FF2F2F;
+            color: #FF2F2F;
+        }
+
+        &.Mui-error label {
+            color: #FF2F2F;
+        }
+
         &.Mui-error fieldset {
-            border-color: #D32F2F;
+            color: #FF2F2F;
         }
     }
-
 
     .MuiInputBase-adornedStart {
         padding: 0;
@@ -37,7 +44,6 @@ export const StyledTextField = styled(TextField) `
         padding: 0;
     }
     
-
     .MuiInputAdornment-root {
         svg {
             path {
@@ -48,7 +54,12 @@ export const StyledTextField = styled(TextField) `
 
     .MuiFormHelperText-root {
         margin: 3px 0 0;
+
+        &.Mui-error {
+            color: #FF2F2F;
+        }
     }
+
 
     input {
         height: 44px;
@@ -68,7 +79,12 @@ export const StyledTextField = styled(TextField) `
             opacity: 0.6;
         }
     }
-//Input label position
+    
+    .MuiInputLabel-root.Mui-error {
+color : #FF2F2F;
+    }
+        //Input label position
+
     label {
         top: -5px;
         font-size: 16px;
@@ -79,25 +95,23 @@ export const StyledTextField = styled(TextField) `
     }
 
     .MuiInputLabel-outlined {
-        color: #3E3027;
+        //color: #3E3027;
     }
 
     .MuiInputLabel-shrink {
-        color: #3E3027 !important;
+        //color: #3E3027;
     }
 
     label.Mui-focused {
-        color: #3E3027 !important;
+        color: #3E3027;
     }
-//label white background
+
+    //label white background
+
     .MuiOutlinedInput-notchedOutline {
         legend {
             font-size: 0.75em;
         }
-    }
-
-    .MuiFormHelperText-root.Mui-error {
-        margin: -2px auto 0;
     }
 
     .MuiAutocomplete-endAdornment {
