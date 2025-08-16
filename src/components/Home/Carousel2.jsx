@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, IconButton, Card, CardContent, CardMedia } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import sliderImg4 from "../../assets/images/sliderImg4.png";
-import sliderImg5 from "../../assets/images/sliderImg5.png";
-import sliderImg6 from "../../assets/images/sliderImg6.png";
-import {btnStyles} from '../../styles/appStyles.jsx';
+import sliderImg4 from "../../assets/images/home/sliderImg4.png";
+import sliderImg5 from "../../assets/images/home/sliderImg5.png";
+import sliderImg6 from "../../assets/images/home/sliderImg6.png";
+import {btnStyles} from '../../styles/btnStyles.jsx';
+import { h4, h3, h6 } from "../../styles/typographyStyles.jsx";
+
 
 const items = [
     {
@@ -80,7 +82,7 @@ const Carousel2 = () => {
     return (
         <Box sx={{ position: "relative", overflow: "hidden", mx: 4, py: 6 }}>
 
-            <Typography sx={{ color: "#000", fontFamily: "Work Sans", fontWeight: 600, fontSize: "32px", textAlign: 'center', mb: 4 }} >
+            <Typography sx={{ ...h3, color: "#000", textAlign: 'center', mb: 4 }} >
                 Shop Our Collections
             </Typography>
             <IconButton onClick={handlePrev} sx={{ position: "absolute", left: 0, top: "50%", transform: "translateY(-50%)", backgroundColor: "#A4795B", color: "#fff", borderRadius: "50px", zIndex: 1, "&:hover": { backgroundColor: "#B88A6E" }, }}>
@@ -93,12 +95,12 @@ const Carousel2 = () => {
 
                         <Box component="img" src={slide.image} alt={slide.title} sx={{ mb: 2, maxWidth: "100%", height: "auto", objectFit: "cover",}} />
                         
-                        <Typography sx={{ color: "#000", fontFamily: "Work Sans", fontWeight: 500, fontSize: "24px", mb: 1 }}>
+                        <Typography sx={{...h4, color: "#000", mb: 1 }}>
                             {slide.title}
                         </Typography>
 
                         <Box sx={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center",}}>
-                        <Typography sx={{ color: "#000", fontFamily: "Montserrat, sans-serif", fontSize: "16px", mb: 2 }}>
+                        <Typography sx={{...h6, color: "#000", mb: 2 }}>
                             {slide.text}
                         </Typography>
                         <Button variant="contained" sx={{ ...btnStyles, width: '177px', mt: "auto",}}>

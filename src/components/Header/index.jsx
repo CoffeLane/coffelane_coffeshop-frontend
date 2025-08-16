@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import logo from '../../assets/images/Logo.svg';
-import {Box, Button, Grid, Menu, MenuItem, Typography} from '@mui/material';
-import Account from '../../assets/icons/Account.svg';
-import ShoppingCart from '../../assets/icons/Shopping Cart.svg';
+import logo from '../../assets/images/header/logo.svg';
+import {Box, Button, Grid, } from '@mui/material';
+import account from '../../assets/icons/account.svg';
+import ShoppingCart from '../../assets/icons/shoppingCart.svg';
 import Search from '../Search/index.jsx';
 import TopLine from '../TopLine/index.jsx';
 import { Link, useLocation } from 'react-router-dom';
@@ -33,10 +33,10 @@ function Header() {
 
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Search />
-          <Button onClick={handleOpenLoginModal}>
-            <Box component="img" src={Account} alt="User account" sx={{ marginLeft: '32px', width: '24px', height: '24px', cursor: 'pointer', }} />
+          <Button onClick={handleOpenLoginModal} disableRipple sx={{ minWidth: 0, padding: 0, backgroundColor: "transparent", border: "none", "&:hover, &:focus, &:active": { backgroundColor: "#EAD9C9",  },}}>
+            <Box component="img" src={account} alt="User account" sx={{ marginLeft: '32px', width: '24px', height: '24px', cursor: 'pointer', }} />
           </Button>
-          <Link to="/cart">
+          <Link to="/shoppingCart">
             <Box component="img" src={ShoppingCart} alt="Shopping cart" sx={{ marginLeft: '32px', width: '24px', height: '24px', cursor: 'pointer', }} />
           </Link>
         </Box>

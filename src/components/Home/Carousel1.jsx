@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import sliderImg1 from "../../assets/images/sliderImg1.png";
-import sliderImg2 from "../../assets/images/sliderImg2.png";
-import sliderImg3 from "../../assets/images/sliderImg3.png";
-import {btnStyles} from '../../styles/appStyles.jsx';
+import sliderImg1 from "../../assets/images/home/sliderImg1.png";
+import sliderImg2 from "../../assets/images/home/sliderImg2.png";
+import sliderImg3 from "../../assets/images/home/sliderImg3.png";
+import {btnStyles} from '../../styles/btnStyles.jsx';
+import {h1, h3, h6} from '../../styles/typographyStyles.jsx';
+
 
 const items = [
   {
@@ -51,13 +53,13 @@ const Carousel1 = () => {
         {items.map((slide, index) => (
           <Box key={index} sx={{ width: `${100 / items.length}%`, display: "flex", alignItems: "center", justifyContent: "space-between",  }}>
             <Box sx={{ width: "40%", margin: '0 176px', }}>
-              <Typography sx={{ color: "#A4795B", fontFamily: "Work Sans", fontWeight: 800, fontSize: '56px', }}>
+              <Typography sx={{...h1 }}>
                 {slide.title}
               </Typography>
-              <Typography sx={{ color: "#3E3027", fontFamily: "Work Sans", fontWeight: 600, fontSize: '32px', margin: '24px 0 16px 0' }}>
+              <Typography sx={{...h3, margin: '24px 0 16px 0' }}>
                 {slide.description}
               </Typography>
-              <Typography sx={{ color: "#7C6F66", fontFamily: "Montserrat, sans-serif", fontSize: "16px" }}>
+              <Typography sx={{...h6}}>
                 {slide.text}
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 'auto' }}>
