@@ -19,7 +19,7 @@ const navLinkStyles = {
 
 export default function Navbar() {
   return (
-    <AppBar position='static' sx={{ backgroundColor: '#fff', boxShadow: 'none', height: '60px' }}>
+    <AppBar position='static' sx={{ backgroundColor: '#fff', boxShadow: 'none', height: '56px' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'center', gap: 4 }}>
         {[
           { to: '/', label: 'Home' },

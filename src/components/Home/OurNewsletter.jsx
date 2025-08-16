@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import imgSignUp from '../../assets/images/imgSignUp.png';
+import imgSignUp from '../../assets/images/home/imgSignUp.png';
 import { TextField, Box, Typography, Button, FormHelperText } from '@mui/material';
-import { btnStyles } from '../../styles/appStyles.jsx';
-import { helperTextRed } from '../../styles/appStyles.jsx';
-import { inputStyles } from '../../styles/appStyles.jsx';
-
+import { btnStyles } from '../../styles/btnStyles.jsx';
+import { helperTextRed } from '../../styles/inputStyles.jsx';
+import { inputStyles } from '../../styles/inputStyles.jsx';
+import { h3, h6 } from "../../styles/typographyStyles.jsx";
 
 
 const validateEmail = (email) => {
@@ -36,16 +36,16 @@ export default function OurNewsletter() {
     <Box sx={{ width: '100vw', maxWidth: '100%', margin: '0 auto', overflow: 'hidden', position: "relative", }}>
       <Box component="img" src={imgSignUp} alt="imgSignUp" sx={{ width: '100%', height: '448px', display: 'block', }} />
       <Box sx={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", px: 2 }}>
-        <Typography sx={{ mb: 2, fontWeight: 600, fontSize: '32px', color: '#3E3027' }}>
+        <Typography sx={{...h3, mb: 2,}}>
           Sign up For our Newsletter
         </Typography>
-        <Typography sx={{ mb: 4, fontWeight: 500, fontSize: '16px', fontFamily: "Montserrat, sans-serif", color: '#3E3027' }}>
+        <Typography sx={{...h6, mb: 4, }}>
           Cofee Lane promotions, new products and sales. Directly to your inbox.
         </Typography>
 
         <Box sx={{ display: "flex", flexDirection: "column",  width: '743px', mr: 2, '&:hover .helper-text': { color: '#A63A3A' }, '&:focus-within .helper-text': { color: '#A63A3A' },}}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <TextField fullWidth variant="outlined" placeholder="Email" value={value} onChange={onChange} error={!!error} sx={inputStyles}/>
+            <TextField fullWidth variant="outlined" placeholder="Email" value={value} onChange={onChange} error={!!error}  sx={inputStyles} />
             <Button variant="contained" onClick={handleSubmit} sx={{ ...btnStyles, width: '149px', px: 3, ml: 2 }}>
               SIGN UP
             </Button>

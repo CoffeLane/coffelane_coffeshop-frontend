@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import logo from '../../assets/images/Logo.svg';
+import logo from '../../assets/images/header/logo.svg';
 import { TextField, Box, Typography, Button, FormHelperText } from '@mui/material';
-import Triangle from '../../assets/icons/Triangle.svg';
+import triangle from '../../assets/icons/triangle.svg';
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { Link, } from 'react-router-dom';
 import linkedin from '../../assets/icons/linkedin.svg';
@@ -16,9 +16,11 @@ import amazon from '../../assets/icons/amazon.svg';
 import googlePay from '../../assets/icons/googlePay.svg';
 import discover from '../../assets/icons/discover.svg';
 import jcb from '../../assets/icons/jcb.svg';
-import { btnStyles } from '../../styles/appStyles.jsx';
-import { helperTextRed } from '../../styles/appStyles.jsx';
-import { inputStyles } from '../../styles/appStyles.jsx';
+import { btnStyles } from '../../styles/btnStyles.jsx';
+import { helperTextRed } from '../../styles/inputStyles.jsx';
+import { inputStyles } from '../../styles/inputStyles.jsx';
+import footerImg from '../../assets/images/footer/footerImg.png';
+import { h6, h4, h7 } from "../../styles/typographyStyles.jsx";
 
 
 const validateEmail = (email) => {
@@ -64,20 +66,20 @@ export default function Footer() {
 
     return (
 
-        <Box sx={{ flexGrow: 1, gap: 2, flex: 1, backgroundColor: '#EAD9C9', display: 'flex', px: 6, py: 6, justifyContent: 'space-between' }}>
+        <Box component="footer" sx={{  flexGrow: 1, gap: 2, flex: 1,backgroundImage: `url(${footerImg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', display: 'flex', px: 6, py: 6, justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, px: 2 }}>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '24px', mb: 1 }}>
+                <Typography sx={{ ...h4, mb: 1 }}>
                     Coffee Lanne
                 </Typography>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 400, fontSize: '14px', mb: 4 }}>
+                <Typography sx={{ ...h7, mb: 4 }}>
                     Ethically Sourced, Delicious Coffee Roasted with Purpose by Blind Dog Coffee Roasters.
                     Enjoy Premium 100% Organic Dark Roast, Medium Roast, Light Roast, Low Acid Decaf,
                     & Half-Caff Coffee Bean Roasts Delivered Fresh To Your Doorstep!
                 </Typography>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '16px', mb: 1 }}>
+                <Typography sx={{ ...h6, fontFamily: 'Work Sans', mb: 1 }}>
                     012-345-6789
                 </Typography>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '16px', mb: 4 }}>
+                <Typography sx={{ ...h6, fontFamily: 'Work Sans',  mb: 4 }}>
                     hello@coffelane.com
                 </Typography>
                 <Link to='/'>
@@ -93,14 +95,14 @@ export default function Footer() {
                     <Box component='img' src={linkedin} alt='linkedin' sx={{ mt: 2, width: '24px', height: '24px', cursor: 'pointer' }} />
                 </Box>
 
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 400, fontSize: '14px' }}>
+                <Typography sx={{ ...h7 }}>
                     © 2025 Coffee Lane
                 </Typography>
             </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, px: 2 }}>
-                <Box component='img' src={Triangle} alt='Triangle' sx={{ mb: 2, width: '24px', height: '24px' }} />
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '24px', mb: 1 }}>
+                <Box component='img' src={triangle} alt='triangle' sx={{ mb: 2, width: '24px', height: '24px' }} />
+                <Typography sx={{ ...h4, mb: 1 }}>
                     Quick links
                 </Typography>
                 {[
@@ -119,8 +121,8 @@ export default function Footer() {
             </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, px: 2, }}>
-                <Box component='img' src={Triangle} alt='Triangle' sx={{ mb: 2, width: '24px', height: '24px' }} />
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '24px', mb: 1 }}>
+                <Box component='img' src={triangle} alt='triangle' sx={{ mb: 2, width: '24px', height: '24px' }} />
+                <Typography sx={{ ...h4, mb: 1 }}>
                     Customer Support
                 </Typography>
                 {[
@@ -139,10 +141,10 @@ export default function Footer() {
             </Box>
 
             <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, px: 2 }}>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Work Sans', fontWeight: 500, fontSize: '24px', mb: 1 }}>
+                <Typography sx={{ ...h4, mb: 1 }}>
                     Newsletter
                 </Typography>
-                <Typography sx={{ color: '#3E3027', fontFamily: 'Montserrat, sans-serif', fontWeight: 500, fontSize: '16px', mb: 2 }}>
+                <Typography sx={{ ...h6, mb: 2 }}>
                     Sign up for exclusive offers, original stories, events and more.
                 </Typography>
 
@@ -159,7 +161,7 @@ export default function Footer() {
                     )}
                 </Box>
                 
-                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '150px' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '185px' }}>
                     <Box component='img' src={visa} alt='visa' sx={{ width: '32px', height: '32px', mr: 2, cursor: 'pointer' }} />
                     <Box component='img' src={mastercard} alt='mastercard' sx={{ width: '32px', height: '32px', mr: 2, cursor: 'pointer' }} />
                     <Box component='img' src={amazon} alt='amazon' sx={{ width: '32px', height: '32px', mr: 2, cursor: 'pointer' }} />
