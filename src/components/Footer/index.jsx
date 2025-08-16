@@ -22,6 +22,7 @@ import { inputStyles } from '../../styles/inputStyles.jsx';
 import footerImg from '../../assets/images/footer/footerImg.png';
 import { h6, h4, h7 } from "../../styles/typographyStyles.jsx";
 
+
 const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
