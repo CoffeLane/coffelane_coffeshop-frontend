@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, Button, IconButton, Card, CardContent, CardMedia } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import sliderImg4 from "../../assets/images/home/sliderImg4.png";
-import sliderImg5 from "../../assets/images/home/sliderImg5.png";
-import sliderImg6 from "../../assets/images/home/sliderImg6.png";
+import sliderImg4 from "../../assets/images/home/sliderimg4.png";
+import sliderImg5 from "../../assets/images/home/sliderimg5.png";
+import sliderImg6 from "../../assets/images/home/sliderimg6.png";
 import {btnStyles} from '../../styles/btnStyles.jsx';
 import { h4, h3, h6 } from "../../styles/typographyStyles.jsx";
 

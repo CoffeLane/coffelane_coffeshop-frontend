@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import imgSignUp from '../../assets/images/home/imgSignUp.png';
+import imgSignUp from '../../assets/images/home/imgsignup.png';
 import { TextField, Box, Typography, Button, FormHelperText } from '@mui/material';
 import { btnStyles } from '../../styles/btnStyles.jsx';
 import { helperTextRed } from '../../styles/inputStyles.jsx';
@@ -52,7 +52,7 @@ export default function OurNewsletter() {
           </Box>
 
           {error && (
-            <FormHelperText className="helper-text" sx={{ ...helperTextRed, mt: 2 }}>
+            <FormHelperText  sx={{ ...helperTextRed, mt: 2 }}>
               {error}
             </FormHelperText>
           )}

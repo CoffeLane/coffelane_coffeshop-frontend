@@ -21,7 +21,7 @@ export default function Filter() {
                 Sort By
             </Typography>
             <FormControl fullWidth sx={{ ...h6, ...inputDropdown, my: 1, mb: 3 }}>
-                <Select value={sort} onChange={(e) => setSort(e.target.value)} >
+                <Select value={sort} onChange={(e) => setSort(e.target.value)} MenuProps={selectMenuProps} >
                     <MenuItem value="lowToHigh">Price: Low to High</MenuItem>
                     <MenuItem value="highToLow">Price: High to Low</MenuItem>
                 </Select>

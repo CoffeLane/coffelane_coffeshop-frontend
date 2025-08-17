@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import imageBg from '../../assets/images/home/imageBg.png';
-import Bannervideo from '../../assets/videos/Bannervideopreview.mp4';
+import imageBg from '../../assets/images/home/imagebg.png';
+import Bannervideo from '../../assets/videos/bannervideopreview.mp4';
 import preview from '../../assets/videos/preview.jpg';
 import { btnStyles } from '../../styles/btnStyles.jsx';
 import { headTitle } from '../../styles/typographyStyles.jsx';
-import tornbottombg from '../../assets/videos/tornbottombg.svg'
+import tornbottombg from '../../assets/videos/tornbottombg.svg';
 
 
 const CoffeeBanner = () => {

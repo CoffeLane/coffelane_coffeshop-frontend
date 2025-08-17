@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import logo from '../../assets/images/header/logo.svg';
 import {Box, Button, Grid, } from '@mui/material';
 import account from '../../assets/icons/account.svg';
-import ShoppingCart from '../../assets/icons/shoppingCart.svg';
+import ShoppingCart from '../../assets/icons/shoppingcart.svg';
 import Search from '../Search/index.jsx';
 import TopLine from '../TopLine/index.jsx';
 import { Link, useLocation } from 'react-router-dom';
