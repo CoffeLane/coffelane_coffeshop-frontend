@@ -19,7 +19,7 @@ import jcb from '../../assets/icons/jcb.svg';
 import { btnStyles } from '../../styles/btnStyles.jsx';
 import { helperTextRed } from '../../styles/inputStyles.jsx';
 import { inputStyles } from '../../styles/inputStyles.jsx';
-import footerImg from '../../assets/images/footer/footerimg.png';
+import footerImg from '../../assets/images/footer/footer-img.png';
 import { h6, h4, h7 } from "../../styles/typographyStyles.jsx";
 
 
