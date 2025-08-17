@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, InputAdornment, Box, IconButton, } from '@mui/material';
-import SearchIcon from '../../assets/icons/searchIcon.svg';
+import SearchIcon from '../../assets/icons/searchicon.svg';
 
 
 const Search = () => {

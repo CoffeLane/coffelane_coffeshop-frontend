@@ -6,20 +6,20 @@ import { NavLink as RouterNavLink } from "react-router-dom";
 import { Link, } from 'react-router-dom';
 import linkedin from '../../assets/icons/linkedin.svg';
 import facebook from '../../assets/icons/facebook.svg';
-import youTube from '../../assets/icons/youTube.svg';
+import youTube from '../../assets/icons/youtube.svg';
 import instagram from '../../assets/icons/instagram.svg';
 import twitter from '../../assets/icons/twitter.svg';
 import vimeo from '../../assets/icons/vimeo.svg';
 import visa from '../../assets/icons/visa.svg';
 import mastercard from '../../assets/icons/mastercard.svg';
 import amazon from '../../assets/icons/amazon.svg';
-import googlePay from '../../assets/icons/googlePay.svg';
+import googlePay from '../../assets/icons/googlepay.svg';
 import discover from '../../assets/icons/discover.svg';
 import jcb from '../../assets/icons/jcb.svg';
 import { btnStyles } from '../../styles/btnStyles.jsx';
 import { helperTextRed } from '../../styles/inputStyles.jsx';
 import { inputStyles } from '../../styles/inputStyles.jsx';
-import footerImg from '../../assets/images/footer/footerImg.png';
+import footerImg from '../../assets/images/footer/footerimg.png';
 import { h6, h4, h7 } from "../../styles/typographyStyles.jsx";
 
 
@@ -155,7 +155,7 @@ export default function Footer() {
                     </Button>
 
                     {error && (
-                        <FormHelperText className="helper-text" sx={{ ...helperTextRed, mt: 2 }}>
+                        <FormHelperText  sx={{ ...helperTextRed, mt: 2 }}>
                             {error}
                         </FormHelperText>
                     )}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Box, Typography, Button, IconButton } from "@mui/material";
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
-import sliderImg1 from "../../assets/images/home/sliderImg1.png";
-import sliderImg2 from "../../assets/images/home/sliderImg2.png";
-import sliderImg3 from "../../assets/images/home/sliderImg3.png";
+import sliderImg1 from "../../assets/images/home/sliderimg1.png";
+import sliderImg2 from "../../assets/images/home/sliderimg2.png";
+import sliderImg3 from "../../assets/images/home/sliderimg3.png";
 import {btnStyles} from '../../styles/btnStyles.jsx';
 import {h1, h3, h6} from '../../styles/typographyStyles.jsx';
 
