@@ -1,6 +1,5 @@
 import {styled} from "@mui/material/styles";
 import {Tabs} from "@mui/material";
-import {typography} from "../../theme/typography.js";
 
 export const StyledTabs = styled(Tabs) `
     min-height: 48px;
@@ -10,8 +9,4 @@ export const StyledTabs = styled(Tabs) `
     .MuiTabs-indicator{
         background-color: #3E3027;
     }
-    .Mui-selected {
-        color: #3E3027;
-    }
-`
-
+`;
