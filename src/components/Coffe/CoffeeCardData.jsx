@@ -78,10 +78,12 @@ const items = [
         buttonText: "Add to bag",
     },
 ];
+console.log(items)
 
 export default function CoffeeCardData() {
     return (
         <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", }}>
+
             {items.map((item, index) => (
                 <Card key={index} sx={{ width: "300px", height: "480px", display: "flex", padding: "16px", flexDirection: "column", borderRadius: "24px", boxShadow: 2, }}>
                     <Box sx={{ position: "relative", width: "252px", height: "256px", mx: "auto", p: 1 }}>
