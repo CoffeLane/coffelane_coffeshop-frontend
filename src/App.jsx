@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contexts/CartContext'; // Add this import
 import HomePage from './pages/HomePage.jsx'
 import NotFoundPage from './pages/NotFoundPage';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Layout from './components/Layout';
+import Header from './components/Header/index.jsx';
+import Footer from './components/Footer/index.jsx';
+import Layout from './components/Layout/Layout.jsx';
 import CoffeePage from './pages/CoffePage.jsx';
 import AccessoriesPage from './pages/AccessoriesPage.jsx';
 import OurStoryPage from './pages/OurStoryPage.jsx';
