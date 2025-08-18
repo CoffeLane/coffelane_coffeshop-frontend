@@ -15,10 +15,12 @@ const validateEmail = (email) => {
 export default function OurNewsletter() {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const onChange = (e) => {
     setValue(e.target.value);
     if (error) setError("");
+    if (success) setSuccess(false);
   };
 
 
@@ -27,7 +29,7 @@ export default function OurNewsletter() {
       setError("Please enter a valid email address");
       return;
     }
-    alert(`Email submitted: ${value}`);
+    setSuccess(true);
     setValue("");
     setError("");
   };
@@ -47,15 +49,12 @@ export default function OurNewsletter() {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <TextField fullWidth variant="outlined" placeholder="Email" value={value} onChange={onChange} error={!!error}  sx={inputStyles} />
             <Button variant="contained" onClick={handleSubmit} sx={{ ...btnStyles, width: '149px', px: 3, ml: 2 }}>
-              SIGN UP
+              Subscribe
             </Button>
           </Box>
 
-          {error && (
-            <FormHelperText  sx={{ ...helperTextRed, mt: 2 }}>
-              {error}
-            </FormHelperText>
-          )}
+          {error && (<FormHelperText  sx={{ ...helperTextRed, mt: 2 }}>{error}</FormHelperText>)}
+          {success && <Typography sx={{ color: "#16675C", fontWeight: 700, mt: 1 }}>Subscribed!</Typography>}
         </Box>
 
       </Box>

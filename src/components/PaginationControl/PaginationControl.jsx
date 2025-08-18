@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Box, Pagination } from "@mui/material";
 
-const PaginationControl = ({ page, totalPages, onChange }) => {
+const PaginationControl = ({ page, totalPages, onPageChange }) => {
+  
 
-    
+
     return (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
-            <Pagination count={totalPages} page={page} onChange={onChange}
+            <Pagination count={totalPages} page={page} onChange={onPageChange}
                 sx={{
                     "& .MuiPaginationItem-root": {
                         borderRadius: "50%",
@@ -18,6 +19,7 @@ const PaginationControl = ({ page, totalPages, onChange }) => {
                     "& .MuiPaginationItem-previousNext": {
                         borderRadius: "50%",
                         backgroundColor: "#FFFFFF",
+                        margin: " 0 96px",
                         minWidth: "40px",
                         minHeight: "40px",
                     },

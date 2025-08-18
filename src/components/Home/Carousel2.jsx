@@ -6,7 +6,7 @@ import sliderImg5 from "../../assets/images/home/sliderimg5.png";
 import sliderImg6 from "../../assets/images/home/sliderimg6.png";
 import {btnStyles} from '../../styles/btnStyles.jsx';
 import { h4, h3, h6 } from "../../styles/typographyStyles.jsx";
-
+import { useNavigate } from 'react-router-dom';
 
 const items = [
     {
@@ -46,6 +46,7 @@ const items = [
 const Carousel2 = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [visibleCards, setVisibleCards] = useState(3);
+    const navigate = useNavigate();
 
     const updateVisibleCards = () => {
         if (window.innerWidth < 600) {
@@ -103,7 +104,7 @@ const Carousel2 = () => {
                         <Typography sx={{...h6, color: "#000", mb: 2 }}>
                             {slide.text}
                         </Typography>
-                        <Button variant="contained" sx={{ ...btnStyles, width: '177px', mt: "auto",}}>
+                        <Button variant="contained" onClick={() => navigate('/coffee')} sx={{ ...btnStyles, width: '177px', mt: "auto",}}>
                             {slide.buttonText}
                         </Button>
                           </Box>
