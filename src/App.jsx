@@ -9,14 +9,13 @@ import AccessoriesPage from './pages/AccessoriesPage.jsx';
 import OurStoryPage from './pages/OurStoryPage.jsx';
 import WholesalePage from './pages/WholesalePage.jsx';
 import AccountPage from './pages/AccountPage.jsx';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
 
 function App() {
 
-
-
-
   return (
    <BrowserRouter>
+    <ScrollToTop />
       <Routes>
         <Route path="/" element={
           <>

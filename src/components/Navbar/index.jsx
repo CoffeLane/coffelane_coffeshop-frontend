@@ -23,7 +23,7 @@ export default function Navbar() {
       <Toolbar sx={{ display: 'flex', justifyContent: 'center', gap: 4 }}>
         {[
           { to: '/', label: 'Home' },
-          { to: '/coffee', label: 'Cofee' },
+          { to: '/coffee', label: 'Coffee' },
           { to: '/accessories', label: 'Accessories' },
           { to: '/shop', label: 'Shop' },
           { to: '/ourStory', label: 'Our Story' },

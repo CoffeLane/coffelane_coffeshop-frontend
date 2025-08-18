@@ -6,7 +6,7 @@ import sliderImg2 from "../../assets/images/home/sliderimg2.png";
 import sliderImg3 from "../../assets/images/home/sliderimg3.png";
 import {btnStyles} from '../../styles/btnStyles.jsx';
 import {h1, h3, h6} from '../../styles/typographyStyles.jsx';
-
+import { useNavigate} from 'react-router-dom';
 
 const items = [
   {
@@ -34,6 +34,7 @@ const items = [
 
 const Carousel1 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+   const navigate = useNavigate();
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
@@ -63,7 +64,7 @@ const Carousel1 = () => {
                 {slide.text}
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: 'auto' }}>
-                <Button variant="contained" sx={{ ...btnStyles, marginTop: '32px', width: '156px'}}>
+                <Button variant="contained" onClick={() => navigate('/coffee')} sx={{ ...btnStyles, marginTop: '32px', width: '156px', textTransform: 'none',}}>
                   {slide.buttonText}
                 </Button>
               </Box>

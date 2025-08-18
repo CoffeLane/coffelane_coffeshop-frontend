@@ -43,10 +43,13 @@ const navLinkStyles = {
 export default function Footer() {
     const [value, setValue] = useState("");
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState(false);
+    
 
     const onChange = (e) => {
         setValue(e.target.value);
         if (error) setError("");
+        if (success) setSuccess(false);
     };
 
 
@@ -55,7 +58,7 @@ export default function Footer() {
             setError("Please enter a valid email address");
             return;
         }
-        alert(`Email submitted: ${value}`);
+        setSuccess(true);
         setValue("");
         setError("");
     };
@@ -63,18 +66,7 @@ export default function Footer() {
 
     return (
 
-        <Box component="footer" sx={{
-            flexGrow: 1,
-            gap: 2,
-            flex: 1,
-            backgroundImage: `url(${footerImg})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            display: 'flex',
-            px: 6,
-            py: 6,
-            justifyContent: 'space-between'
-        }}>
+        <Box component="footer" sx={{ flexGrow: 1, gap: 2, flex: 1, backgroundImage: `url(${footerImg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', display: 'flex', px: 6, py: 6, justifyContent: 'space-between'}}>
             <Box sx={{display: 'flex', flexDirection: 'column', flex: 1, px: 2}}>
                 <Typography sx={{...h4, mb: 1}}>
                     Coffee Lanne
@@ -163,39 +155,24 @@ export default function Footer() {
                     Sign up for exclusive offers, original stories, events and more.
                 </Typography>
 
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: '100%',
-                    '&:hover .helper-text': {color: '#A63A3A'},
-                    '&:focus-within .helper-text': {color: '#A63A3A'},
-                }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', '&:hover .helper-text': {color: '#A63A3A'}, '&:focus-within .helper-text': {color: '#A63A3A'},}}>
                     <TextField fullWidth variant="outlined" value={value} placeholder="Email" onChange={onChange}
                                error={!!error} sx={{...inputStyles}}/>
                     <Button variant="contained" onClick={handleSubmit} sx={{...btnStyles, width: '149px', mt: 2}}>
-                        SIGN UP
+                        Subscribe
                     </Button>
 
-                    {error && (
-                        <FormHelperText sx={{...helperTextRed, mt: 2}}>
-                            {error}
-                        </FormHelperText>
-                    )}
+                    {error && (<FormHelperText sx={{...helperTextRed, mt: 2}}> {error} </FormHelperText> )}
+                    {success && <Typography sx={{ color: "#16675C", fontWeight: 700, mt: 1 }}>Subscribed!</Typography>}
                 </Box>
 
                 <Box sx={{display: 'flex', alignItems: 'center', marginTop: '185px'}}>
-                    <Box component='img' src={visa} alt='visa'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
-                    <Box component='img' src={mastercard} alt='mastercard'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
-                    <Box component='img' src={amazon} alt='amazon'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
-                    <Box component='img' src={googlePay} alt='googlePay'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
-                    <Box component='img' src={discover} alt='discover'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
-                    <Box component='img' src={jcb} alt='jcb'
-                         sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={visa} alt='visa' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={mastercard} alt='mastercard' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={amazon} alt='amazon' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={googlePay} alt='googlePay' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={discover} alt='discover' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
+                    <Box component='img' src={jcb} alt='jcb' sx={{width: '32px', height: '32px', mr: 2, cursor: 'pointer'}}/>
                 </Box>
             </Box>
         </Box>

@@ -1,94 +1,41 @@
-import React from "react";
-import image1 from '../../assets/images/coffe/image_1.png';
-import image2 from '../../assets/images/coffe/image_2.png';
-import image3 from '../../assets/images/coffe/image_3.png';
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Box } from "@mui/material";
-import { h4, h7, } from "../../styles/typographyStyles.jsx";
+import { h1, h4, h7, } from "../../styles/typographyStyles.jsx";
 import { btnCart } from "../../styles/btnStyles.jsx";
 import favorite from "../../assets/icons/favorite.svg";
+import favoriteActive from "../../assets/icons/favorite-active.svg";
 import shopping from "../../assets/icons/shopping.svg"
 
-const items = [
-    {
-        title: "Jacobs Barista Editions Americano",
-        description: "Instant coffee Jacobs Barista Editions Americano",
-        image: image1,
-        price: "$12",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Lavazza Qualita Oro",
-        description: "Coffee in grains Lavazza Qualita Oro",
-        image: image2,
-        price: "$20.05",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Starbucks Veranda Blend",
-        description: "Coffee Starbucks Veranda Blend",
-        image: image3,
-        price: "$21.22",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Jacobs Barista Editions Americano",
-        description: "Instant coffee Jacobs Barista Editions Americano",
-        image: image1,
-        price: "$12",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Lavazza Qualita Oro",
-        description: "Coffee in grains Lavazza Qualita Oro",
-        image: image2,
-        price: "$20.05",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Starbucks Veranda Blend",
-        description: "Coffee Starbucks Veranda Blend",
-        image: image3,
-        price: "$21.22",
-        buttonText: "Add to bag",
-    },
-     {
-        title: "Jacobs Barista Editions Americano",
-        description: "Instant coffee Jacobs Barista Editions Americano",
-        image: image1,
-        price: "$12",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Lavazza Qualita Oro",
-        description: "Coffee in grains Lavazza Qualita Oro",
-        image: image2,
-        price: "$20.05",
-        buttonText: "Add to bag",
-    },
-    {
-        title: "Starbucks Veranda Blend",
-        description: "Coffee Starbucks Veranda Blend",
-        image: image3,
-        price: "$21.22",
-        buttonText: "Add to bag",
-    },
-];
-console.log(items)
 
-export default function CoffeeCardData() {
+
+export default function CoffeeCardData({ products }) {
+    const [isfavorites, setFavorites] = useState({});
+
+    const toggleFavorite = (id) => {
+        setFavorites((prev) => ({ ...prev, [id]: !prev[id] }));
+    };
+
+    if (!products || products.length === 0) {
+    return (
+        <Typography sx={{ ...h1, mb: 1 }}>
+            No products found
+        </Typography>
+    );
+}
+
     return (
         <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", }}>
 
-            {items.map((item, index) => (
-                <Card key={index} sx={{ width: "300px", height: "480px", display: "flex", padding: "16px", flexDirection: "column", borderRadius: "24px", boxShadow: 2, }}>
+            {products.map((item) => (
+                <Card key={item.id} sx={{ width: "300px", height: "480px", display: "flex", padding: "16px", flexDirection: "column", borderRadius: "24px", boxShadow: 2, }}>
                     <Box sx={{ position: "relative", width: "252px", height: "256px", mx: "auto", p: 1 }}>
                         <CardMedia component="img" image={item.image} alt={item.title} sx={{ width: "100%", height: "100%" }} />
-                        <Box component="img" src={favorite} alt="favorite" sx={{ position: "absolute", top: 16, right: 16, width: "32px", height: "32px", cursor: "pointer", }} />
+                        <Box component="img" src={isfavorites[item.id] ? favoriteActive : favorite} alt="favorite" sx={{ position: "absolute", top: 16, right: 16, width: "32px", height: "32px", cursor: "pointer" }} onClick={() => toggleFavorite(item.id)} />
                     </Box>
                     <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
                         <Box sx={{ height: 88, overflow: "hidden" }}>
@@ -103,7 +50,7 @@ export default function CoffeeCardData() {
                             {item.price}
                         </Typography>
                         <Button variant="contained" sx={{ ...btnCart, flexGrow: 1, mr: 1 }}
-                            endIcon={ <Box component="img" src={shopping} alt="shopping" sx={{ width: "24px", height: "24px", cursor: "pointer", ml: 1 }} /> }>
+                            endIcon={<Box component="img" src={shopping} alt="shopping" sx={{ width: "24px", height: "24px", cursor: "pointer", ml: 1 }} />}>
                             {item.buttonText}
                         </Button>
                     </CardContent>
