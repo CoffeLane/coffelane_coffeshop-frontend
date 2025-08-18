@@ -54,14 +54,10 @@ const LoginModal = ({open, onClose}) => {
     return (
         <StyledDialog
             open={open}
+            modalIsOpen={open}
             onClose={onClose}
             maxWidth="sm"
             fullWidth
-            slotProps={{
-                paper: {
-                    className: open ? 'MuiDialog-paperOpen' : '',
-                },
-            }}
         >
             <DialogContent sx={{padding: '56px', height: '100vh', display: 'flex', flexDirection: 'column'}}>
                 <Box sx={{borderBottom: 1, borderColor: '#E0E0E0', padding: 0}}>
