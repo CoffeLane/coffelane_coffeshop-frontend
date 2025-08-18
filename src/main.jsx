@@ -1,9 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import 'normalize.css';
 import './index.css';
 import App from './App.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import 'normalize.css';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { store, persistor } from './store/store.js';
