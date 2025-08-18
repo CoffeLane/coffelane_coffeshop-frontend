@@ -1,6 +1,6 @@
 import React from 'react'; // Remove useState since you're using context
-import {Box, DialogContent, Typography, Button, Divider, IconButton} from '@mui/material';
-import {Add, Remove, Delete} from '@mui/icons-material';
+import {Box, DialogContent, Divider, IconButton, Typography} from '@mui/material';
+import {Add, Delete, Remove} from '@mui/icons-material';
 import {StyledDialog} from "../UI/StyledDialog.js";
 import {StyledButton} from "../UI/StyledButton.js";
 import {useCart} from '../../contexts/CartContext';
