@@ -12,7 +12,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default function ProductCardPage() {
     const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
-    const product = useSelector((state) => state.products.items.find(p => p.id === parseInt(id)));
+    const product = useSelector((state) => state.products.items?.find(p => p.id === parseInt(id)));
 
     if (!product) return <div>Product not found</div>;
 
@@ -20,10 +20,12 @@ export default function ProductCardPage() {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     const handlePrev = () => {
+        if (photos.length === 0) return;
         setSelectedIndex(prev => (prev === 0 ? photos.length - 1 : prev - 1));
     };
 
     const handleNext = () => {
+        if (photos.length === 0) return;
         setSelectedIndex(prev => (prev === photos.length - 1 ? 0 : prev + 1));
     };
 

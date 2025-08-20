@@ -47,20 +47,28 @@ export default function CoffeeCardData({ products }) {
 
                     <Card key={item.id} sx={{ width: "300px", height: "480px", display: "flex", padding: "16px", flexDirection: "column", borderRadius: "24px", boxShadow: 2, }}>
                         <Box sx={{ position: "relative", width: "252px", height: "256px", mx: "auto", p: 1 }}>
-                            <CardMedia component="img" image={item.photos_url[0]} alt={item.name} sx={{ width: "100%", height: "100%" }} />
+
+                            {item.photos_url?.[0] ? (
+                                <CardMedia component="img" image={item.photos_url[0]} alt={item.name} />
+                            ) : (
+                                <Box sx={{ width: "100%", height: "256px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f0f0f0", color: "#888", fontSize: 14 }}>
+                                    No image
+                                </Box>
+                            )}
+                            {/* <CardMedia component="img" image={item.photos_url[0]} alt={item.name || 'No name'} sx={{ width: "100%", height: "100%" }} /> */}
                             <Box component="img" src={isfavorites[item.id] ? favoriteActive : favorite} alt="favorite" sx={{ position: "absolute", top: 16, right: 16, width: "32px", height: "32px", cursor: "pointer" }} onClick={() => toggleFavorite(item.id)} />
                         </Box>
                         <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
                             <Box sx={{ height: 88, overflow: "hidden" }}>
                                 <Typography sx={{ ...h4, mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', cursor: 'pointer' }} onClick={() => navigate(`/product/${item.id}`)}>
-                                    {item.name}
+                                    {item.name || 'No name'}
                                 </Typography>
                                 <Typography sx={{ ...h7, mb: 1 }}>
                                     {item.description || 'No description'}
                                 </Typography>
                             </Box>
                             <Typography sx={{ mt: 1, color: '#16675C', fontSize: '14px', fontWeight: 700, fontFamily: "Montserrat, sans-serif", textAlign: "right", mb: 1 }}>
-                                $ {item.price}
+                                $ {item.price ?? '0'}
                             </Typography>
                             <Button variant="contained" onClick={() => handleAddToCart(item)} sx={isInCart ? btnInCart : btnCart}
                                 endIcon={<Box component="img" src={isInCart ? incart : shopping} alt={isInCart ? "In cart" : "Shopping cart"} sx={{ width: "24px", height: "24px", ml: 1 }} />}>
