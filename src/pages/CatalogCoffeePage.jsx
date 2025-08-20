@@ -6,14 +6,14 @@ import { Box, Typography, CircularProgress } from '@mui/material';
 import Filter from '../components/Filter/Filter.jsx'
 import PaginationControl from "../components/PaginationControl/PaginationControl.jsx";
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts } from '../store/slice/productsSlice.js';
+import { fetchProducts } from '../store/slice/productsSlice.jsx';
 import { useNavigate } from "react-router-dom";
 
 
 
 const itemsPerPage = 9;
 
-export default function CoffeePage() {
+export default function CatalogCoffeePage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { items, totalItems, loading, error } = useSelector((state) => state.products);
