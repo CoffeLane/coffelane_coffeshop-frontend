@@ -12,7 +12,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 export default function ProductCardPage() {
     const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
-    const product = useSelector((state) => state.products.items?.find(p => p.id === parseInt(id)));
+    const product = useSelector((state) => state.products?.items?.find(p => p.id === parseInt(id)));
 
     if (!product) return <div>Product not found</div>;
 
@@ -38,9 +38,15 @@ export default function ProductCardPage() {
         <Box sx={{ display: 'flex', gap: 4 }}>
 
             <Box sx={{ position: 'relative', width: 300 }}>
-                {photos.length > 0 && (
+                {photos?.length > 0 && (
                     <>
-                        <Box component="img" src={photos[selectedIndex]} alt={product.name} sx={{ width: '100%', height: 300, objectFit: 'contain' }} />
+                        {photos[selectedIndex] ? (
+                            <Box component="img" src={photos[selectedIndex]} alt={product.name} sx={{ width: '100%', height: 300, objectFit: 'contain' }} />
+                        ) : (
+                            <Box sx={{ width: '100%', height: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f0f0f0' }}>
+                                No image
+                            </Box>
+                        )} 
 
                         <IconButton onClick={handlePrev} sx={{ position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)', backgroundColor: 'rgba(255,255,255,0.7)', }} >
                             <ArrowBackIosIcon />
@@ -51,7 +57,7 @@ export default function ProductCardPage() {
                         </IconButton>
 
                         <Box sx={{ display: 'flex', gap: 2, mt: 2 }}>
-                            {photos.map((img, index) => (
+                            {photos?.map((img, index) => (
                                 <Box key={index} component="img" src={img} alt={`${product.name}-${index}`} sx={{ width: 60, height: 60, objectFit: 'contain', border: selectedIndex === index ? '2px solid #000' : '1px solid #ccc', cursor: 'pointer', }} onClick={() => setSelectedIndex(index)} />
                             ))}
                         </Box>
