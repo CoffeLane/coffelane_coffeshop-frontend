@@ -6,8 +6,8 @@ import {StyledButton} from "../UI/StyledButton.js";
 import {useCart} from '../../contexts/CartContext';
 
 const CartModal = ({open, onClose}) => {
-    console.log('CartModal rendered, open:', open);
-    console.log('CartModal props:', {open, onClose});
+    // console.log('CartModal rendered, open:', open);
+    // console.log('CartModal props:', {open, onClose});
 
     const {cartItems, updateQuantity, removeFromCart, getCartTotal} = useCart();
     const subtotal = getCartTotal();

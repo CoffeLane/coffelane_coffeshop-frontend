@@ -8,8 +8,15 @@ import products from '../../mockData/products.jsx';
 //     try {
 //       const response = await api.get(`/products?page=${page}&limit=${limit}`);
 //       console.log('API response:', response.data);
-//       // ожидаем, что сервер возвращает { data: [...], totalItems: 100 }
-//       return response.data;
+
+//       return {
+//         data: response.data.data,
+//         totalItems: response.data.total_items,
+//         totalPages: response.data.total_pages,
+//         currentPage: response.data.current_page,
+//         hasNextPage: response.data.next_page,
+//         hasPreviousPage: response.data.previous_page,
+//       };
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error.response?.data || 'Error');
 //     }
@@ -17,8 +24,7 @@ import products from '../../mockData/products.jsx';
 // );
 
 
-
-// thunk для пагинации на моках
+// Thunk для работы с моками
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async ({ page = 1, limit = 9 } = {}, thunkAPI) => {
@@ -29,6 +35,8 @@ export const fetchProducts = createAsyncThunk(
     return {
       data: currentItems,
       totalItems: products.length,
+      totalPages: Math.ceil(products.length / limit),
+      currentPage: page,
     };
   }
 );
@@ -40,6 +48,8 @@ const productsSlice = createSlice({
   initialState: {
     items: [],
     totalItems: 0,
+    totalPages: 0,
+    currentPage: 1,
     loading: false,
     error: null,
   },
@@ -53,6 +63,10 @@ const productsSlice = createSlice({
         state.loading = false;
         state.items = action.payload.data;
         state.totalItems = action.payload.totalItems;
+        state.totalPages = action.payload.totalPages;
+        state.currentPage = action.payload.currentPage;
+        state.hasNextPage = action.payload.hasNextPage;
+        state.hasPreviousPage = action.payload.hasPreviousPage;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
