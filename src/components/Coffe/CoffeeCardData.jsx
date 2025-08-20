@@ -41,7 +41,7 @@ export default function CoffeeCardData({ products }) {
     return (
         <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", }}>
 
-            {products.map((item) => {
+            {products?.map((item) => {
                 const isInCart = !!cartItems[item.id];
                 return (
 
@@ -68,7 +68,7 @@ export default function CoffeeCardData({ products }) {
                                 </Typography>
                             </Box>
                             <Typography sx={{ mt: 1, color: '#16675C', fontSize: '14px', fontWeight: 700, fontFamily: "Montserrat, sans-serif", textAlign: "right", mb: 1 }}>
-                                $ {item.price ?? '0'}
+                                ${Number(item.price || 0).toFixed(2)}
                             </Typography>
                             <Button variant="contained" onClick={() => handleAddToCart(item)} sx={isInCart ? btnInCart : btnCart}
                                 endIcon={<Box component="img" src={isInCart ? incart : shopping} alt={isInCart ? "In cart" : "Shopping cart"} sx={{ width: "24px", height: "24px", ml: 1 }} />}>
