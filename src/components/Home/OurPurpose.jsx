@@ -11,8 +11,8 @@ export default function OurPurpose() {
 
     return (
         <Box sx={{ backgroundColor: '#EAD9C9' }}>
-            <Grid container spacing={4} sx={{ display: 'flex', flexWrap: 'nowrap' }}>
-                <Grid sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', width: '48%', justifyContent: 'center', alignItems: 'center' }}>
+            <Grid container spacing={4} sx={{ display: 'flex', flexWrap: 'nowrap', gap: 0 }}>
+                <Grid sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', width: '50%', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography sx={{ ...h3, marginBottom: '16px', }}>
                         Our Purpose
                     </Typography>
@@ -28,13 +28,13 @@ export default function OurPurpose() {
                         SHOP HERE
                     </Button>
                 </Grid>
-                <Grid sx={{ width: '52%', }}>
+                <Grid sx={{ width: '50%', position: 'relative' }}>
                     <Box component="img" src={purpose1} alt="Purpose Image 1" sx={{ width: '100%', height: '100%' }} />
                 </Grid>
             </Grid>
-            <Grid container spacing={4} sx={{ display: 'flex', flexWrap: 'nowrap' }}>
-                <Grid sx={{ width: '50%', }}>
-                    <Box component="img" src={purpose2} alt="Purpose Image 2" sx={{ width: '100%', height: '100%' }} />
+            <Grid container spacing={4} sx={{ display: 'flex', flexWrap: 'nowrap', gap: 0 }}>
+                <Grid sx={{ width: '50%', position: 'relative' }}>
+                    <Box component="img" src={purpose2} alt="Purpose Image 2" sx={{ width: '100%', height: '100%',  }} />
                 </Grid>
                 <Grid sx={{ display: 'flex', flexDirection: 'column', flexWrap: 'nowrap', width: '50%', justifyContent: 'center', alignItems: 'center' }}>
                     <Typography sx={{ ...h3, marginBottom: '16px', }}>
