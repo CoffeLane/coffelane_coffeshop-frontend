@@ -28,7 +28,7 @@ function Header() {
         setIsCartModalOpen(true);
     }
     useEffect(() => {
-    console.log('Cart modal state changed:', isCartModalOpen);
+    // console.log('Cart modal state changed:', isCartModalOpen);
   }, [isCartModalOpen]);
 
     const handleCloseCartModal = () => {

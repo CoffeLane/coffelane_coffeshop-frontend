@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Grid from '@mui/material/Grid';
 import CoffeeCardData from '../components/Coffe/CoffeeCardData.jsx'
 import { h5 } from "../styles/typographyStyles.jsx";
-import { Box, Typography, } from '@mui/material';
+import { Box, Typography, CircularProgress } from '@mui/material';
 import Filter from '../components/Filter/Filter.jsx'
 import PaginationControl from "../components/PaginationControl/PaginationControl.jsx";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../store/slice/productsSlice.js';
-
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +15,7 @@ const itemsPerPage = 9;
 
 export default function CoffeePage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { items, totalItems, loading, error } = useSelector((state) => state.products);
 
   const [page, setPage] = useState(1);
@@ -27,9 +28,9 @@ export default function CoffeePage() {
 
   const handlePageChange = (event, value) => {
     setPage(value);
+    navigate(`?page=${value}`);
   };
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
@@ -46,7 +47,13 @@ export default function CoffeePage() {
             Instant, ground, or beans — all the essentials in one place.
           </Typography>
         </Box>
-        <CoffeeCardData products={items} />
+        {loading ? (
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <CircularProgress />
+          </Box>
+        ) : (
+          <CoffeeCardData products={items} />
+        )}
         <PaginationControl page={page} totalPages={totalPages} onPageChange={handlePageChange} />
       </Grid>
     </Grid>
