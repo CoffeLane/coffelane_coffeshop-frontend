@@ -5,12 +5,13 @@ import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header/index.jsx';
 import Footer from './components/Footer/index.jsx';
 import Layout from './components/Layout/Layout.jsx';
-import CoffeePage from './pages/CoffePage.jsx';
+import CoffeePage from './pages/CatalogCoffeePage.jsx';
 import AccessoriesPage from './pages/AccessoriesPage.jsx';
 import OurStoryPage from './pages/OurStoryPage.jsx';
 import WholesalePage from './pages/WholesalePage.jsx';
 import AccountPage from './pages/AccountPage.jsx';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
+import ProductCardPage from './pages/ProductCardPage.jsx';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       
               <Route element={<Layout />}>
                 <Route path="/coffee" element={<CoffeePage />} />
+                <Route path="/product/:id" element={<ProductCardPage />} />
                 <Route path="/accessories" element={<AccessoriesPage />} />
                 <Route path="/ourStory" element={<OurStoryPage />} />
                 <Route path="/wholesale" element={<WholesalePage />} />

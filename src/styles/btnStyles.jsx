@@ -44,3 +44,24 @@ export const btnCart = {
     cursor: "not-allowed",
   },
 };
+
+export const btnInCart = {
+  height: '52px',
+  fontWeight: 500,
+  fontSize: '16px',
+  fontFamily: "Montserrat, sans-serif",
+  backgroundColor: "#fff",
+  border:"2px solid #16675C",
+  textTransform: "none",
+  color: "#16675C",
+  borderRadius: "20px",
+  padding: ' 6px 24px',
+  "&:hover": {
+    backgroundColor: "#f3f8f8ff",
+    color:'#02715C',
+  },
+  "&:active": {
+    backgroundColor: "#f3f8f8ff",
+      color:'#fff',
+  },
+}
