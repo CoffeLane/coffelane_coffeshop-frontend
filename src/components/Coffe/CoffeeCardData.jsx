@@ -60,7 +60,7 @@ export default function CoffeeCardData({ products }) {
                         </Box>
                         <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
                             <Box sx={{ height: 88, overflow: "hidden" }}>
-                                <Typography sx={{ ...h4, mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', cursor: 'pointer' }} onClick={() => navigate(`/product/${item.id}`)}>
+                                <Typography sx={{ ...h4, mb: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', cursor: 'pointer' }} onClick={() => navigate(`/coffee/product/${item.id}`)}>
                                     {item.name || 'No name'}
                                 </Typography>
                                 <Typography sx={{ ...h7, mb: 1 }}>
