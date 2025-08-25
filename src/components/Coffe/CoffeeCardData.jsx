@@ -32,24 +32,26 @@ export default function CoffeeCardData({ products }) {
 
     if (!products || products.length === 0) {
         return (
-            <Typography sx={{  mb: 1 }}>
+            <Typography sx={{ mb: 1 }}>
                 No products found
             </Typography>
         );
     }
+
 
     return (
         <Box sx={{ display: "flex", gap: 3, flexWrap: "wrap", }}>
 
             {products?.map((item) => {
                 const isInCart = !!cartItems[item.id];
+                const price = item.supplies?.[0]?.price || 0;
                 return (
 
                     <Card key={item.id} sx={{ width: "300px", height: "480px", display: "flex", padding: "16px", flexDirection: "column", borderRadius: "24px", boxShadow: 2, }}>
                         <Box sx={{ position: "relative", width: "252px", height: "256px", mx: "auto", p: 1 }}>
 
-                            {item.photos_url?.[0] ? (
-                                <CardMedia component="img" image={item.photos_url[0]} alt={item.name} />
+                            {item.photos_url?.[0]?.url ? (
+                                <CardMedia component="img" image={item.photos_url?.[0]?.url} alt={item.name} />
                             ) : (
                                 <Box sx={{ width: "100%", height: "256px", display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#f0f0f0", color: "#888", fontSize: 14 }}>
                                     No image
@@ -68,7 +70,7 @@ export default function CoffeeCardData({ products }) {
                                 </Typography>
                             </Box>
                             <Typography sx={{ mt: 1, color: '#16675C', fontSize: '14px', fontWeight: 700, fontFamily: "Montserrat, sans-serif", textAlign: "right", mb: 1 }}>
-                                ${Number(item.price || 0).toFixed(2)}
+                                ${Number(price).toFixed(2)}
                             </Typography>
                             <Button variant="contained" onClick={() => handleAddToCart(item)} sx={isInCart ? btnInCart : btnCart}
                                 endIcon={<Box component="img" src={isInCart ? incart : shopping} alt={isInCart ? "In cart" : "Shopping cart"} sx={{ width: "24px", height: "24px", ml: 1 }} />}>
