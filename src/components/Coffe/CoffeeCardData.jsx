@@ -32,7 +32,7 @@ export default function CoffeeCardData({ products }) {
 
     if (!products || products.length === 0) {
         return (
-            <Typography sx={{ ...h1, mb: 1 }}>
+            <Typography sx={{  mb: 1 }}>
                 No products found
             </Typography>
         );

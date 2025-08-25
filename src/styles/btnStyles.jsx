@@ -21,6 +21,32 @@ export const btnStyles = {
   },
 };
 
+export const btnBorderStyles = {
+  height: '52px',
+  fontWeight: 500,
+  fontSize: '16px',
+  fontFamily: "Montserrat, sans-serif",
+  backgroundColor: "#fff",
+  color: "#A4795B",
+  border:"2px solid #A4795B",
+  textTransform: "none",
+  borderRadius: "20px",
+  padding: ' 6px 24px',
+  "&:hover": {
+    backgroundColor: "#B88A6E",
+    color: '#fff'
+  },
+  "&:active": {
+    backgroundColor: "#B88A6E",
+    color: '#fff'
+  },
+  "&:disabled": {
+    backgroundColor: "#999999",
+    color: "#FFFFFF",
+    cursor: "not-allowed",
+  },
+};
+
 export const btnCart = {
   height: '52px',
   fontWeight: 500,

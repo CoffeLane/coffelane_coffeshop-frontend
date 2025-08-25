@@ -156,8 +156,7 @@ export default function Footer() {
                 </Typography>
 
                 <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%', '&:hover .helper-text': {color: '#A63A3A'}, '&:focus-within .helper-text': {color: '#A63A3A'},}}>
-                    <TextField fullWidth variant="outlined" value={value} placeholder="Email" onChange={onChange}
-                               error={!!error} sx={{...inputStyles}}/>
+                    <TextField fullWidth variant="outlined" value={value} placeholder="Email" onChange={onChange} error={!!error} sx={{...inputStyles}}/>
                     <Button variant="contained" onClick={handleSubmit} sx={{...btnStyles, width: '149px', mt: 2}}>
                         Subscribe
                     </Button>

@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const itemsPerPage = 9;
+const itemsPerPage = 12;
 
 export default function CatalogCoffeePage() {
   const dispatch = useDispatch();
