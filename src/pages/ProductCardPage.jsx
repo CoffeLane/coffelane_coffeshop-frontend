@@ -15,36 +15,46 @@ import { fetchProducts } from '../store/slice/productsSlice.jsx';
 
 
 export default function ProductCardPage() {
-    const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
     const dispatch = useDispatch();
     const { items, loading } = useSelector(state => state.products);
-    
+
+    const [quantity, setQuantity] = useState(1);
+    const [product, setProduct] = useState(null);
 
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
+    useEffect(() => {
+        if (!loading && items.length > 0) {
+            const found = items.find(p => p.id === parseInt(id));
+            if (found) {
+                setProduct(found);
+                setQuantity(1);
+            } else {
+                setProduct(null);
+            }
+        }
+    }, [id, items, loading]);
+
     if (loading) return <div>Loading...</div>;
-
-    const product = items.find(p => p.id === parseInt(id));
-
     if (!product) return <div>Product not found</div>;
 
-    const recommended = product ? items.filter(p => p.id !== product.id).slice(0, 3) : [];
+    const recommended = items.filter(p => p.id !== product.id).slice(0, 3);
 
-    // console.log(product); 
+    console.log(product);
 
     return (
 
         <Box sx={{ width: '100%' }}>
             <Grid container sx={{ px: 4, py: 4, display: 'flex', justifyContent: 'space-evenly', gap: 3, mt: 4 }}>
-                <Box sx={{ }}>
+                <Box sx={{}}>
                     <ProductImageSlider photos={product.photos_url} productName={product.name} />
                 </Box>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, flex: 1, maxWidth: 600, }}>
-                    <ProductInfo product={product} quantity={quantity} onIncrement={() => setQuantity(q => q + 1)} onDecrement={() => setQuantity(q => Math.max(1, q - 1))} />
-                    <AddToCartButtons product={product} quantity={quantity} />
+                    <ProductInfo key={product.id}    product={product} quantity={quantity} onIncrement={() => setQuantity(q => q + 1)} onDecrement={() => setQuantity(q => Math.max(1, q - 1))} />
+                    <AddToCartButtons key={`cart-${product.id}`} product={product} quantity={quantity} />
                 </Box>
             </Grid>
             <Box sx={{ px: 4, py: 4, }}>
